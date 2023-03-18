@@ -1,0 +1,18 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+body{
+    overflow: hidden;
+}
+.background-image{
+    background-image: url("../../../assets/vesitImage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    z-index: -1;
+}
+.container{
+    z-index: 0;
+}
