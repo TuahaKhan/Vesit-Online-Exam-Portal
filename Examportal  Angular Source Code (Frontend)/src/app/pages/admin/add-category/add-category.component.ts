@@ -35,7 +35,7 @@ export class AddCategoryComponent implements OnInit {
       (data: any) => {
         this.category.title = '';
         this.category.description = '';
-        Swal.fire('Success !!', 'Category is added successfuly', 'success');
+        Swal.fire('Success !!', 'Subject is added successfuly', 'success');
       },
       (error) => {
         console.log(error);

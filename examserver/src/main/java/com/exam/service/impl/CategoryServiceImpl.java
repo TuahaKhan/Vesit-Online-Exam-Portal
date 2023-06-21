@@ -5,6 +5,7 @@ import com.exam.repo.CategoryRepository;
 import com.exam.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -37,9 +38,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteCategory(Long categoryId) {
-        Category category = new Category();
-        category.setCid(categoryId);
-        this.categoryRepository.delete(category);
+//        Category category = new Category();
+//        category.setCid(categoryId);
+        this.categoryRepository.deleteById(categoryId);
     }
 
 }

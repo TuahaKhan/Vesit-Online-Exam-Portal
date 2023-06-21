@@ -53,6 +53,33 @@ public class UserController {
 
     }
 
+    @PostMapping("/adminSignup")
+    public User createAdminUser(@RequestBody User user) throws Exception {
+
+
+        user.setProfile("default.png");
+        //encoding password with bcryptpasswordencoder
+
+        user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
+
+        Set<UserRole> roles = new HashSet<>();
+
+        Role role = new Role();
+        role.setRoleId(44L);
+        role.setRoleName("ADMIN");
+
+        UserRole userRole = new UserRole();
+        userRole.setUser(user);
+        userRole.setRole(role);
+
+        roles.add(userRole);
+
+        System.out.println(user.getUsername());
+        return this.userService.createUser(user, roles);
+
+
+    }
+
     @GetMapping("/{username}")
     public User getUser(@PathVariable("username") String username) {
         return this.userService.getUser(username);

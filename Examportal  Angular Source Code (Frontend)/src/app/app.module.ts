@@ -42,6 +42,8 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartComponent } from './pages/user/start/start.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { AdminSignupComponent } from './pages/admin/admin-signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     NavbarComponent,
     FooterComponent,
     SignupComponent,
+    AdminSignupComponent,
     LoginComponent,
     HomeComponent,
     DashboardComponent,

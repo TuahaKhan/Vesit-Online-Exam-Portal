@@ -48,7 +48,7 @@ public class AuthenticateController {
             throw new Exception("User not found ");
         }
 
-        /////////////authenticate
+        ///////authenticate
 
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(jwtRequest.getUsername());
         String token = this.jwtUtils.generateToken(userDetails);

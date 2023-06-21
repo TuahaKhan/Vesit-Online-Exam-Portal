@@ -20,6 +20,7 @@ import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { AdminSignupComponent } from './pages/admin/admin-signup/signup.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
     component: SignupComponent,
     pathMatch: 'full',
   },
+  // {
+  //   path:'admin-signup',
+  //   component: AdminSignupComponent,
+  //   pathMatch:'full',
+  // },
   {
     path: 'login',
     component: LoginComponent,
@@ -45,6 +51,11 @@ const routes: Routes = [
       {
         path: '',
         component: WelcomeComponent,
+      },
+      {
+        path:'admin-signup',
+        component: AdminSignupComponent,
+        pathMatch:'full',
       },
       {
         path: 'profile',

@@ -58,6 +58,8 @@ export class AddQuizComponent implements OnInit {
     this._quiz.addQuiz(this.quizData).subscribe(
       (data) => {
         Swal.fire('Success', 'quiz is added', 'success');
+
+        // This will clear the textfeild once data is send
         this.quizData = {
           title: '',
           description: '',

@@ -16,4 +16,8 @@ export class CategoryService {
   public addCategory(category) {
     return this._http.post(`${baseUrl}/category/`, category);
   }
+
+  public deleteCategory(cId){
+    return this._http.delete(`${baseUrl}/category/${cId}`);
+  }
 }

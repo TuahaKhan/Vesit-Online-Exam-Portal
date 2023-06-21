@@ -1,6 +1,7 @@
 package com.exam.service;
 
 import com.exam.model.exam.Category;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Set;
 

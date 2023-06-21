@@ -9,8 +9,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "users")
+@Entity //used for table creation
+@Table(name = "users")//Creating table with name user in DB
 public class User implements UserDetails {
 
     @Id

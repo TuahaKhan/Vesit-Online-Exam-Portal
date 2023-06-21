@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { error } from 'console';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
 
@@ -26,5 +27,25 @@ export class ViewCategoriesComponent implements OnInit {
         Swal.fire('Error !!', 'Error in loading data', 'error');
       }
     );
+  }
+  deleteCategory(cId) {
+    // console.log(cId);
+    Swal.fire({
+      icon: 'info',
+      title: 'Are you sure ?',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+       this._category.deleteCategory(cId).subscribe(
+        (data)=>{
+          this.categories=this.categories.filter((cat)=>cat.cid!=cId)
+          Swal.fire('Success', 'Subject Deleted','success');
+        },
+        (error)=>{Swal.fire('Error', 'Error in deleting subject','error');
+      }
+        )
+      }
+    });
   }
 }
